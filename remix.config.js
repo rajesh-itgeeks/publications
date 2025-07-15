@@ -17,8 +17,7 @@ const config = {
     v3_singleFetch: true,
   },
   server: "@remix-run/vercel",
-  // ✅ Fix: change to actual build output used by Remix Vite template
-  serverBuildPath: "build/server/index.js",
+  serverBuildPath: "api/index.js", // ✅ this is the key fix
   serverDependenciesToBundle: ["@shopify/shopify-api"], // only if needed
   dev: {
     port: process.env.HMR_SERVER_PORT || 8002,

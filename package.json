@@ -2,7 +2,8 @@
   "name": "ebook-management",
   "private": true,
   "scripts": {
-    "build": "remix vite:build",
+    "build": "npx remix vite:build && npm run move:server",
+    "move:server": "mkdir api && copy build\\server\\index.js api\\index.js",
     "dev": "shopify app dev",
     "start": "remix-serve ./build/server/index.js",
     "config:link": "shopify app config link",
@@ -24,7 +25,6 @@
   },
   "dependencies": {
     "@prisma/client": "^6.11.1",
-    "@remix-run/dev": "^2.16.1",
     "@remix-run/fs-routes": "^2.16.1",
     "@remix-run/node": "^2.16.1",
     "@remix-run/react": "^2.16.1",
@@ -42,6 +42,7 @@
     "vite-tsconfig-paths": "^5.0.1"
   },
   "devDependencies": {
+    "@remix-run/dev": "^2.16.8",
     "@remix-run/eslint-config": "^2.16.1",
     "@remix-run/route-config": "^2.16.1",
     "@shopify/api-codegen-preset": "^1.1.1",
