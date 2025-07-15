@@ -18,7 +18,7 @@ const config = {
     v3_singleFetch: true,
   },
   server: "@remix-run/vercel",
-  serverBuildPath: "api/index.js",
+  serverBuildPath: "build/server/index.js",
   dev: {
     port: process.env.HMR_SERVER_PORT || 8002,
   },
