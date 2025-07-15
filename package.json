@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "npx remix vite:build && npm run move:server",
-    "move:server": "mkdir api && copy build\\server\\index.js api\\index.js",
+  "move:server": "mkdir -p api && cp build/server/index.js api/index.js",
     "dev": "shopify app dev",
     "start": "remix-serve ./build/server/index.js",
     "config:link": "shopify app config link",
