@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "npx remix vite:build && npm run move:server",
-  "move:server": "mkdir -p api && cp build/server/index.js api/index.js",
+    "move:server": "mkdir -p api && cp build/server/index.js api/index.js",
     "dev": "shopify app dev",
     "start": "remix-serve ./build/server/index.js",
     "config:link": "shopify app config link",
@@ -50,6 +50,7 @@
     "@types/node": "^22.2.0",
     "@types/react": "^18.2.31",
     "@types/react-dom": "^18.2.14",
+    "@vercel/remix": "^2.16.7",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^10.0.1",
     "prettier": "^3.2.4",
