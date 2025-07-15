@@ -7,7 +7,6 @@ if (
   delete process.env.HOST;
 }
 
-// This is needed because we're using ESM (no module.exports)
 /** @type {import('@remix-run/dev').AppConfig} */
 const config = {
   appDirectory: "app",
@@ -18,7 +17,9 @@ const config = {
     v3_singleFetch: true,
   },
   server: "@remix-run/vercel",
+  // ✅ Fix: change to actual build output used by Remix Vite template
   serverBuildPath: "build/server/index.js",
+  serverDependenciesToBundle: ["@shopify/shopify-api"], // only if needed
   dev: {
     port: process.env.HMR_SERVER_PORT || 8002,
   },
