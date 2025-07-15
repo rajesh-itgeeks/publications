@@ -7,8 +7,9 @@ if (
   delete process.env.HOST;
 }
 
+// This is needed because we're using ESM (no module.exports)
 /** @type {import('@remix-run/dev').AppConfig} */
-module.exports = {
+const config = {
   appDirectory: "app",
   assetsBuildDirectory: "public/build",
   publicPath: "/build/",
@@ -16,12 +17,11 @@ module.exports = {
   future: {
     v3_singleFetch: true,
   },
-  // ✅ This tells Remix to use the Vercel adapter
   server: "@remix-run/vercel",
-  // ✅ Output path where Vercel will look for serverless function
   serverBuildPath: "api/index.js",
-  // Optional: only for local dev HMR port fix
   dev: {
-    port: process.env.HMR_SERVER_PORT || 8002
-  }
+    port: process.env.HMR_SERVER_PORT || 8002,
+  },
 };
+
+export default config;
